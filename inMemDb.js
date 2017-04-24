@@ -21,15 +21,32 @@ const employer = {
 
 function byId(id) {
   return users[id];
-
 }
 
 function youngest() {
-
+  let youngest = null;
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (youngest === null) {
+      youngest = users[i+1];
+    }
+    if (users[i+1].age < youngest.age) {
+      youngest = users[i+1];
+    }
+  });
+  return youngest;
 }
 
 function oldest() {
-
+  let oldest = null;
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (oldest === null) {
+      oldest = users[i+1];
+    }
+    if (users[i+1].age > oldest.age) {
+      oldest = users[i+1];
+    }
+  });
+  return oldest;
 }
 
 function males () {

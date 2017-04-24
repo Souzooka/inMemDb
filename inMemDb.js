@@ -87,6 +87,7 @@ function employees(employee) {
   Object.keys(users).forEach( (v, i, arr) => {
     if (users[i+1].jobType === employerKey) {
       employees.push(users[i+1]);
+      employees[employees.length-1].jobType = employer[employees[employees.length-1].jobType];
     }
   });
   return employees;

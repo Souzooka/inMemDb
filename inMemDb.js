@@ -50,11 +50,23 @@ function oldest() {
 }
 
 function males () {
-
+  let males = [];
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (users[i+1].gender === 'm') {
+      males.push(users[i+1]);
+    }
+  });
+  return males;
 }
 
 function females() {
-
+  let females = [];
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (users[i+1].gender === 'f') {
+      females.push(users[i+1]);
+    }
+  });
+  return females;
 }
 
 function employees(employer) {

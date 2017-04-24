@@ -1,0 +1,20 @@
+{
+  "name": "inMemDb",
+  "version": "1.0.0",
+  "description": "This is an in memory DB to get you to think about how databases work and why we need them. This morning exercise should also help you to understand why a DB helps to organize your data.",
+  "main": "inMemDb.js",
+  "scripts": {
+    "test": "mocha test/inMemDb_spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souzooka/inMemDb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Souzooka/inMemDb/issues"
+  },
+  "homepage": "https://github.com/Souzooka/inMemDb#readme"
+}

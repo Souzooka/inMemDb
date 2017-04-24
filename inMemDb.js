@@ -93,13 +93,24 @@ function employees(employee) {
   return employees;
 }
 
+function canDrink() {
+  let canDrink = [];
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (users[i+1].age >= 21) {
+      canDrink.push(users[i+1]);
+    }
+  });
+  return canDrink;
+}
+
 const functions = {
   byId: byId,
   youngest: youngest,
   oldest: oldest,
   males: males,
   females: females,
-  employees: employees
+  employees: employees,
+  canDrink: canDrink
 };
 
 module.exports = functions;

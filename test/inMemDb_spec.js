@@ -71,4 +71,19 @@ describe('inMemDb', () => {
 
   });
 
+  describe('canDrink', () => {
+
+    it('should retrieve all users who are 21 or above', () => {
+      expect(inMemDb.canDrink()).to.be.deep.equal([
+        { name: 'Bob', age: 21, gender: 'm', jobType: 'dv' },
+        { name: 'Claire', age: 56, gender: 'f', jobType: 'dv' },
+        { name: 'Eric', age: 61, gender: 'm', jobType: 'dv' },
+        { name: 'Fred', age: 45, gender: 'm', jobType: 'dv' },
+        { name: 'George', age: 38, gender: 'm', jobType: 'dv' },
+        { name: 'Jake', age: 27, gender: 'm', jobType: 'dv' }
+      ]);
+    });
+
+  });
+
 });

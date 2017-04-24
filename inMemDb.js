@@ -86,7 +86,7 @@ function employees(employee) {
 
   Object.keys(users).forEach( (v, i, arr) => {
     if (users[i+1].jobType === employerKey) {
-      employees.push(users[i+1]);
+      employees.push(Object.assign({}, users[i+1]));
       employees[employees.length-1].jobType = employer[employees[employees.length-1].jobType];
     }
   });
@@ -103,6 +103,24 @@ function canDrink() {
   return canDrink;
 }
 
+function allUsersEmployerGrouped() {
+  let usersArr = [];
+  for (let i = 1; i <= Object.keys(users).length; ++i) {
+    usersArr.push(users[String(i)]);
+  }
+
+  usersArr.sort((curr, next) => {
+    if (curr.jobType < next.jobType) {
+      return -1;
+    }
+    if (curr.jobType > next.jobType) {
+      return 1;
+    }
+    return 0;
+  });
+  return usersArr;
+}
+
 const functions = {
   byId: byId,
   youngest: youngest,
@@ -110,7 +128,8 @@ const functions = {
   males: males,
   females: females,
   employees: employees,
-  canDrink: canDrink
+  canDrink: canDrink,
+  allUsersEmployerGrouped: allUsersEmployerGrouped
 };
 
 module.exports = functions;

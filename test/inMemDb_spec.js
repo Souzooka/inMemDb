@@ -86,4 +86,25 @@ describe('inMemDb', () => {
 
   });
 
+  describe('allUsersEmployerGrouped', () => {
+
+    it('should retrieve all users with employers grouped', () => {
+      expect(inMemDb.allUsersEmployerGrouped()).to.be.deep.equal([
+        { name: 'George', age: 38, gender: 'm', jobType: 'dv' },
+        { name: 'Claire', age: 56, gender: 'f', jobType: 'dv' },
+        { name: 'Eric', age: 61, gender: 'm', jobType: 'dv' },
+        { name: 'Fred', age: 45, gender: 'm', jobType: 'dv' },
+        { name: 'Bob', age: 21, gender: 'm', jobType: 'dv' },
+        { name: 'Jake', age: 27, gender: 'm', jobType: 'dv' },
+        { name: 'David', age: 9, gender: 'm', jobType: 'na' },
+        { name: 'Hannah', age: 15, gender: 'f', jobType: 'na' },
+        { name: 'Kathy', age: 8, gender: 'f', jobType: 'na' },
+        { name: 'Alice', age: 12, gender: 'f', jobType: 'st' },
+        { name: 'Ilona', age: 17, gender: 'f', jobType: 'st' },
+        { name: 'Liam', age: 20, gender: 'm', jobType: 'st' }
+      ]);
+    });
+
+  });
+
 });

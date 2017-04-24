@@ -69,8 +69,27 @@ function females() {
   return females;
 }
 
-function employees(employer) {
+function employees(employee) {
+  // namespace conflicts much?
+  let employees = [];
+  let employerIndex = null;
+  let employerKey = null;
 
+  Object.values(employer).forEach( (v, i, arr) => {
+    if (v === employee) {
+      employerIndex = i;
+      return;
+    }
+  });
+
+  employerKey = Object.keys(employer)[employerIndex];
+
+  Object.keys(users).forEach( (v, i, arr) => {
+    if (users[i+1].jobType === employerKey) {
+      employees.push(users[i+1]);
+    }
+  });
+  return employees;
 }
 
 const functions = {

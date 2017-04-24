@@ -63,6 +63,7 @@ describe('inMemDb', () => {
 
     it('should retrieve all users of a specified employer', () => {
       expect(inMemDb.employees('N/A')).to.be.deep.equal([
+        { name: 'David', age: 9, gender: 'm', jobType: 'na' },
         { name: 'Hannah', age: 15, gender: 'f', jobType: 'na' },
         { name: 'Kathy', age: 8, gender: 'f', jobType: 'na' }
         ]);

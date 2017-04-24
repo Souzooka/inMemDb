@@ -20,6 +20,7 @@ const employer = {
 };
 
 function byId(id) {
+  return users[id];
 
 }
 

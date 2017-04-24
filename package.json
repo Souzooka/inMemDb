@@ -4,7 +4,7 @@
   "description": "This is an in memory DB to get you to think about how databases work and why we need them. This morning exercise should also help you to understand why a DB helps to organize your data.",
   "main": "inMemDb.js",
   "scripts": {
-    "test": "mocha test/inMemDb_spec.js"
+    "test": "mocha test/inMemDb_spec.js --watch"
   },
   "repository": {
     "type": "git",

@@ -70,3 +70,13 @@ SELECT *
 FROM users
 ORDER BY age DESC
 LIMIT 1;
+
+--males function
+SELECT *
+FROM users
+WHERE gender = 'm';
+
+--females function
+SELECT *
+FROM users
+WHERE gender = 'f';

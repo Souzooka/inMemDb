@@ -84,3 +84,8 @@ WHERE gender = 'f';
 SELECT users.name, users.age, users.gender, employers.fulljob
 FROM users, employers
 WHERE users.jobtype = employers.id AND users.jobtype = 'dv';
+
+--canDrink function
+SELECT *
+FROM users
+WHERE users.age >= 21;

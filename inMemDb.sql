@@ -58,3 +58,15 @@ INSERT INTO users (name, age, gender, jobtype) VALUES
 SELECT *
 FROM users
 WHERE id = 3;
+
+--youngest function
+SELECT *
+FROM users
+ORDER BY age ASC
+LIMIT 1;
+
+--oldest function
+SELECT *
+FROM users
+ORDER BY age DESC
+LIMIT 1;

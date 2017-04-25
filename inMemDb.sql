@@ -53,3 +53,8 @@ INSERT INTO users (name, age, gender, jobtype) VALUES
   ('Jake', 27, 'm', 'dv'),
   ('Kathy', 8, 'f', 'na'),
   ('Liam', 20, 'm', 'st');
+
+--byId function
+SELECT *
+FROM users
+WHERE id = 3;

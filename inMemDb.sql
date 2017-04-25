@@ -8,26 +8,25 @@ CREATE DATABASE inmemdb;
 --Switch to database
 \c inmemdb
 
+--Create type job as enum
+CREATE TYPE JOB AS ENUM ('dv', 'na', 'st');
 
 --Create table empolyers
 DROP TABLE IF EXISTS employers;
 CREATE TABLE employers (
-  id VARCHAR(2) PRIMARY KEY NOT NULL,
-  fullname VARCHAR(255) NOT NULL
+  id JOB PRIMARY KEY NOT NULL,
+  fulljob VARCHAR(255) NOT NULL
   );
 
 --Populate employers
-INSERT INTO employers (id, fullname)
+INSERT INTO employers (id, fulljob)
 VALUES ('dv', 'devleague');
 
-INSERT INTO employers (id, fullname)
+INSERT INTO employers (id, fulljob)
 VALUES ('st', 'student');
 
-INSERT INTO employers (id, fullname)
+INSERT INTO employers (id, fulljob)
 VALUES ('na', 'N/A');
-
---Create type job as enum
-CREATE TYPE JOB AS ENUM ('dv', 'na', 'st');
 
 --Create table users
 DROP TABLE IF EXISTS users;
@@ -36,7 +35,7 @@ CREATE TABLE users (
   name VARCHAR(50) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(1) NOT NULL,
-  jobtype JOB DEFAULT 'na'
+  jobtype JOB NOT NULL REFERENCES employers(id)
   );
 
 --Populate users
@@ -80,3 +79,8 @@ WHERE gender = 'm';
 SELECT *
 FROM users
 WHERE gender = 'f';
+
+--employers function
+SELECT users.name, users.age, users.gender, employers.fulljob
+FROM users, employers
+WHERE users.jobtype = employers.id AND users.jobtype = 'dv';

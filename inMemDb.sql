@@ -89,3 +89,9 @@ WHERE users.jobtype = employers.id AND users.jobtype = 'dv';
 SELECT *
 FROM users
 WHERE users.age >= 21;
+
+--groupByEmployer function
+SELECT users.name, users.age, users.gender, employers.fulljob
+FROM users, employers
+WHERE users.jobtype = employers.id
+ORDER BY users.jobtype ASC;

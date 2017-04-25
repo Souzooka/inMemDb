@@ -12,3 +12,15 @@ oldest: Retrieve the oldest user in the system.
 males: Retrieve all the users in the system with the gender of male.
 females: Retrieve all the users in the system with the gender of female.
 employees: Retrieve all the users in the system that belong to a given employer.
+
+Stretch Goal:
+Create a function canDrink() that returns all the users who's of drinking age
+
+Super Stretch Goal:
+Create a function groupByEmplorer() that returns all the users but are grouped by their employer and then sorted by their name.
+
+Ex. [
+  all st ...
+  all dv ...
+  all na
+]
